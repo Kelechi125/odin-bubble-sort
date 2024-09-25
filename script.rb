@@ -13,16 +13,33 @@
 # Switch their places around
 # Repeat process until sorted entire array is sorted in ascending order
 
+# Checks if the index of the following array element equals the array length
+
+def check_index(index)
+  p index
+  if index == array.length - 1
+    break
+  end
+end
 
 def bubble_sort(array)
 
-  array.each_with_index do |num, index|
-    if array[index] > array[index + 1] # Checks if current element is bigger than following element
-      array[index], array[index + 1] = array[index + 1], array[index]
+  if array != array.sort 
+    array.each_with_index do |num, index|
+
+      check_index(index)
+
+      # Checks if current element is bigger than following element
+      if array[index] > array[index + 1] 
+        # Reassigns the elements to each other's spots
+        array[index], array[index + 1] = array[index + 1], array[index]
+      end
+      # Prints the updated array
+      p array
     end
-    p array
+  else
+    return array
   end
-    
 end
 
 bubble_sort([4,3,78,2,0,2])
