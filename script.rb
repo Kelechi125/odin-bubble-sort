@@ -15,31 +15,42 @@
 
 # Checks if the index of the following array element equals the array length
 
+=begin
 def check_index(index)
   p index
   if index == array.length - 1
     break
   end
 end
+=end
 
 def bubble_sort(array)
 
-  if array != array.sort 
     array.each_with_index do |num, index|
 
-      check_index(index)
+      # Checks if the current index is the array length
+      if index == array.length - 1
 
-      # Checks if current element is bigger than following element
-      if array[index] > array[index + 1] 
-        # Reassigns the elements to each other's spots
-        array[index], array[index + 1] = array[index + 1], array[index]
+        # Checks if the array is sorted
+        if array == array.sort 
+          return array
+        elsif array != array.sort
+          continue
+        end
+
+        
+      elsif index < array.length - 1
+          # Checks if current element is bigger than following element
+        if array[index] > array[index + 1] 
+          # Reassigns the elements to each other's spots
+          array[index], array[index + 1] = array[index + 1], array[index]
+        end
+        # Prints the updated array
+        p array
       end
-      # Prints the updated array
-      p array
+      
     end
-  else
-    return array
-  end
+  
 end
 
 bubble_sort([4,3,78,2,0,2])
