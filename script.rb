@@ -1,29 +1,3 @@
-# Create a bubble_sort method that takes an array of numbers
-# and sorts it from the smallest to largest
-# The method will look at two consecutive numbers in the array
-# and swap their places depending on which is bigger/smaller
-
-# Use slice method to move numbers around
-# Max amount of pass-throughs needed will equal n - 1 (number of items minus 1)
-# If the array is completely backwards
-
-# Start from the beginning (or end?) of array
-# Take each element and compare it to the one that follows it
-# If the first element is bigger than the one following it
-# Switch their places around
-# Repeat process until sorted entire array is sorted in ascending order
-
-# Checks if the index of the following array element equals the array length
-
-=begin
-def check_index(index)
-  p index
-  if index == array.length - 1
-    break
-  end
-end
-=end
-
 def bubble_sort(array)
 
   max_num_of_loops = array.length - 1
